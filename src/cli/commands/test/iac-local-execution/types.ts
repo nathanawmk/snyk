@@ -237,7 +237,6 @@ export enum IaCErrorCodes {
   FailedToDetectYamlConfigError = 1024,
 
   // kubernetes-parser errors
-  MissingRequiredFieldsInKubernetesYamlError = 1031,
   FailedToParseHelmError = 1032,
 
   // terraform-file-parser errors
