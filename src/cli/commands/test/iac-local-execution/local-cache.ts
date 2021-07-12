@@ -12,7 +12,7 @@ import { getErrorStringCode } from './error-utils';
 
 const debug = Debug('iac-local-cache');
 
-export const LOCAL_POLICY_ENGINE_DIR = '.iac-data';
+const LOCAL_POLICY_ENGINE_DIR = '.iac-data';
 
 const KUBERNETES_POLICY_ENGINE_WASM_PATH = path.join(
   LOCAL_POLICY_ENGINE_DIR,
@@ -50,7 +50,7 @@ const CUSTOM_POLICY_ENGINE_DATA_PATH = path.join(
   'data.json',
 );
 
-export function assertNever(value: never): never {
+function assertNever(value: never): never {
   throw new Error(
     `Unhandled discriminated union member: ${JSON.stringify(value)}`,
   );
@@ -137,7 +137,7 @@ export class FailedToInitLocalCacheError extends CustomError {
   }
 }
 
-export class FailedToDownloadRulesError extends CustomError {
+class FailedToDownloadRulesError extends CustomError {
   constructor(message?: string) {
     super(message || 'Failed to download policies');
     this.code = IaCErrorCodes.FailedToDownloadRulesError;
@@ -147,7 +147,7 @@ export class FailedToDownloadRulesError extends CustomError {
   }
 }
 
-export class FailedToExtractCustomRulesError extends CustomError {
+class FailedToExtractCustomRulesError extends CustomError {
   constructor(path: string, message?: string) {
     super(message || 'Failed to download policies');
     this.code = IaCErrorCodes.FailedToExtractCustomRulesError;

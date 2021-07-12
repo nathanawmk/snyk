@@ -43,7 +43,7 @@ export async function parseIacTestResult(
   };
 }
 
-export interface IacPayloadFileDetails {
+interface IacPayloadFileDetails {
   fileType: string;
   fileName: string;
   filePath: string;
