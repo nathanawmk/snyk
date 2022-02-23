@@ -9,4 +9,7 @@ resource "aws_security_group" "allow_ssh" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    yor_trace = "61d52385-7c4e-4bef-95ca-0bbcaca136d5"
+  }
 }
